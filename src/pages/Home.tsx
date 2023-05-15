@@ -1,16 +1,15 @@
-import React, { FC, ReactNode, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import styles from './Home.module.scss';
 import Task from '../components/Task/Task';
 import { useAppDispatch } from '../hooks/useAppDispatch';
 import { fetchTasks } from '../redux/slices/taskSlice';
 import { useAppSelector } from '../hooks/useAppSelector';
-import Check from '../components/Check/Check';
 
 const Home: FC = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchTasks());
-  }, []);
+  }, [dispatch]);
   const { tasks } = useAppSelector((state) => state.tasks);
 
   const completedTask = tasks.filter((item) => item.completed === true);
