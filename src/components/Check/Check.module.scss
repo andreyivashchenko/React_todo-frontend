@@ -1,0 +1,16 @@
+.box{
+  height: 22px;
+  width: 22px;
+  background-color: #21212b;
+  border-radius: 8px;
+  border: 3px solid #fa75a0;
+  &__checked{
+    background-color: #fa75a0;
+    padding-top: 2px;
+    img{
+      display: block;
+      margin: 0 auto;
+      max-width: 12px ;
+    }
+  }
+}

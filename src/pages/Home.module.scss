@@ -1,0 +1,24 @@
+.home{
+  &__wrapper{
+    color: white;
+    flex: 1;
+  }
+  &__container{
+    margin: 0 auto;
+    max-width: 1000px;
+    padding-top: 30px;
+  }
+  &__title{
+    padding: 15px;
+    h2{
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+  &__tasks{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,20 @@
+.task{
+  &__container{
+    background-color: #21212b;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    p{
+      padding-left: 10px;
+      font-size: 18px;
+
+    }
+  }
+  &__comleted{
+    p{
+      text-decoration: line-through;
+    }
+  }
+}
