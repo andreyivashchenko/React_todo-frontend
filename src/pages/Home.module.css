@@ -1,0 +1,24 @@
+.home__wrapper {
+  color: white;
+  flex: 1;
+}
+.home__container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding-top: 30px;
+}
+.home__title {
+  padding: 15px;
+}
+.home__title h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.home__tasks {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=Home.module.css.map */

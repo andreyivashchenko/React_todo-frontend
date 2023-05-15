@@ -1,0 +1,17 @@
+.task__container {
+  background-color: #21212b;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+}
+.task__container p {
+  padding-left: 10px;
+  font-size: 18px;
+}
+.task__comleted p {
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=Task.module.css.map */
