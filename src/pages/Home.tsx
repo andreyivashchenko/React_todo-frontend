@@ -1,8 +1,22 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode, useEffect } from 'react';
 import styles from './Home.module.scss';
 import Task from '../components/Task/Task';
+import { useAppDispatch } from '../hooks/useAppDispatch';
+import { fetchTasks } from '../redux/slices/taskSlice';
+import { useAppSelector } from '../hooks/useAppSelector';
+import Check from '../components/Check/Check';
 
 const Home: FC = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchTasks());
+  }, []);
+  const { tasks } = useAppSelector((state) => state.tasks);
+
+  const completedTask = tasks.filter((item) => item.completed === true);
+
+  const incompleteTask = tasks.filter((item) => item.completed === false);
+
   return (
     <div className={styles.home__wrapper}>
       <div className={styles.home__container}>
@@ -12,14 +26,17 @@ const Home: FC = () => {
         </div>
         <input type="text" placeholder={'Add a task'} />
         <div>
-          <h3 className={styles.home__tasks}>Tasks - 3</h3>
-          <Task data={'Задача'} isCompleted={true} /> <Task data={'Задача'} />
-          <Task data={'Задача'} isCompleted={true} />
+          <h3 className={styles.home__tasks}>Tasks - {incompleteTask.length}</h3>
+          {incompleteTask.map((item) => (
+            <Task key={item._id} {...item} />
+          ))}
         </div>
+
         <div>
-          <h3 className={styles.home__tasks}>Comleted - 2</h3>
-          <Task data={'Задача'} isCompleted={true} />
-          <Task data={'Задача'} />
+          <h3 className={styles.home__tasks}>Comleted - {completedTask.length}</h3>
+          {completedTask.map((item) => (
+            <Task key={item._id} {...item} />
+          ))}
         </div>
       </div>
     </div>
